@@ -32,23 +32,4 @@ dashboard_import:
   package_import_url: github://paxoman/m5-dial-for-esphome/shys-m5-dial.yaml@main
   import_full_config: false
 
-esp32:
-  board: esp32-s3-devkitc-1
-  framework:
-    type: arduino
 
-logger:
-  level: DEBUG
-
-api:
-ota:
-  platform: esphome
-
-improv_serial:
-captive_portal:
-
-wifi:
-  ssid: ${wifi_ssid}
-  password: ${wifi_password}
-  ap:
-    password: "12345678"
