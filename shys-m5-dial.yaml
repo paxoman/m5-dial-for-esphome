@@ -2,6 +2,9 @@ substitutions:
   name: "m5-dial"
   wifi_ssid: !secret wifi_ssid
   wifi_password: !secret wifi_password
+  static_ip: !secret ip_dial
+  gateway: !secret gateway_ip
+  subnet: !secret subnet_ip
 
   
 esphome:
@@ -48,8 +51,23 @@ ota:
 improv_serial:
 captive_portal:
 
+
 wifi:
-  ssid: ${wifi_ssid}
-  password: ${wifi_password}
+  networks:
+  - ssid: ${wifi_ssid}   # !secret wifi_ssid_2
+    password: ${wifi_password}  #!secret wifi_password_2
+  
+  
+    manual_ip:
+      static_ip: ${static_ip}
+      gateway: ${gateway}
+      subnet: ${subnet}
+
   ap:
     password: "12345678"
+
+#wifi:
+#  ssid: ${wifi_ssid}
+#  password: ${wifi_password}
+#  ap:
+#    password: "12345678"
